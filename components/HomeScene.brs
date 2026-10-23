@@ -6,7 +6,7 @@ sub init()
     m.selectedIndex = 0
 
     titles = ["NOITE ELÉTRICA", "ÚLTIMO HORIZONTE", "CÓDIGO VERMELHO", "MUNDO SELVAGEM", "ÓRBITA"]
-    colors = ["#3B163A", "#18324B", "#501B21", "#174038", "#25204F"]
+    colors = ["0x3B163AFF", "0x18324BFF", "0x501B21FF", "0x174038FF", "0x25204FFF"]
     for i = 0 to titles.count() - 1
         card = createObject("roSGNode", "Group")
         card.id = "card" + i.toStr()
@@ -23,7 +23,7 @@ sub init()
         stripe.translation = [0, 100]
         stripe.width = 198
         stripe.height = 12
-        stripe.color = "#E50914"
+        stripe.color = "0xE50914FF"
         card.appendChild(stripe)
 
         label = createObject("roSGNode", "Label")
@@ -31,7 +31,7 @@ sub init()
         label.width = 174
         label.height = 60
         label.text = titles[i]
-        label.color = "#FFFFFF"
+        label.color = "0xFFFFFFFF"
         label.font = "font:MediumBoldSystemFont"
         label.wrap = true
         card.appendChild(label)
