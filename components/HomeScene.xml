@@ -2,18 +2,31 @@
 <component name="HomeScene" extends="Scene">
   <script type="text/brightscript" uri="HomeScene.brs" />
   <children>
-    <Rectangle id="background" width="1280" height="720" color="0x08090DFF" />
-    <Rectangle id="heroGlow" translation="[710,0]" width="570" height="430" color="0x17101AFF" opacity="0.78" />
-    <Label id="brand" translation="[64,30]" width="360" height="44" text="PHILCO  /  CINEMA" color="0xF5F5F7FF" font="font:LargeBoldSystemFont" />
-    <Label id="nav" translation="[64,88]" width="900" height="34" text="INÍCIO      FILMES      SÉRIES      MINHA LISTA" color="0xB6B7C0FF" font="font:MediumSystemFont" />
-    <Rectangle id="accent" translation="[64,126]" width="68" height="4" color="0xE50914FF" />
-    <Label id="eyebrow" translation="[70,185]" width="560" height="28" text="DESTAQUE DA SEMANA" color="0xFF5660FF" font="font:SmallBoldSystemFont" />
-    <Label id="heroTitle" translation="[64,220]" width="610" height="88" text="A PRÓXIMA GRANDE HISTÓRIA" color="0xFFFFFFFF" font="font:LargeBoldSystemFont" />
-    <Label id="heroDescription" translation="[68,316]" width="555" height="70" text="Uma central de entretenimento feita para sua sala. Navegue pelo controle remoto e descubra sua próxima sessão." color="0xD1D1D8FF" font="font:MediumSystemFont" wrap="true" />
-    <Label id="heroHint" translation="[68,399]" width="460" height="34" text="OK  •  EXPLORAR   |   SETAS  •  NAVEGAR" color="0xFFFFFFFF" font="font:SmallBoldSystemFont" />
-    <Label id="sectionTitle" translation="[64,466]" width="500" height="34" text="ESCOLHAS PARA SUA PRÓXIMA SESSÃO" color="0xF4F4F5FF" font="font:MediumBoldSystemFont" />
-    <Group id="posterRow" translation="[64,512]" />
-    <Label id="footer" translation="[64,680]" width="900" height="24" text="PROTÓTIPO DE INTERFACE  •  CONTEÚDO DEMONSTRATIVO" color="0x777984FF" font="font:SmallSystemFont" />
-    <Label id="focusHint" translation="[990,680]" width="230" height="24" text="SELECIONE COM OK" color="0xA7A8B0FF" font="font:SmallSystemFont" horizAlign="right" />
+    <Rectangle id="background" width="1280" height="720" color="0x07080CFF" />
+    <Rectangle id="topGlow" translation="[760,0]" width="520" height="370" color="0x201018FF" opacity="0.72" />
+    <Rectangle id="heroPanel" translation="[40,112]" width="1200" height="304" color="0x11131BFF" />
+    <Rectangle id="heroAccent" translation="[40,112]" width="6" height="304" color="0xE50914FF" />
+    <Rectangle id="artPanel" translation="[770,112]" width="470" height="304" color="0x23121CFF" />
+    <Rectangle id="artShape1" translation="[915,145]" width="170" height="230" color="0x55121DFF" opacity="0.78" />
+    <Rectangle id="artShape2" translation="[1005,170]" width="150" height="205" color="0xB20D20FF" opacity="0.66" />
+    <Rectangle id="artShape3" translation="[1090,205]" width="112" height="170" color="0xF02A37FF" opacity="0.54" />
+    <Rectangle id="artBase" translation="[770,382]" width="470" height="34" color="0x08090DFF" opacity="0.75" />
+    <Label id="brand" translation="[64,24]" width="340" height="42" text="PHILCO" color="0xFFFFFFFF" font="font:LargeBoldSystemFont" />
+    <Label id="brandSub" translation="[174,31]" width="180" height="32" text="CINEMA" color="0xF04450FF" font="font:MediumBoldSystemFont" />
+    <Label id="nav" translation="[490,32]" width="700" height="32" text="INÍCIO       FILMES       SÉRIES       MINHA LISTA" color="0xD6D7DEFF" font="font:MediumBoldSystemFont" />
+    <Rectangle id="navAccent" translation="[490,65]" width="54" height="3" color="0xE50914FF" />
+    <Label id="status" translation="[1050,77]" width="180" height="22" text="SUA CENTRAL DE ENTRETENIMENTO" color="0x858894FF" font="font:SmallSystemFont" horizAlign="right" />
+    <Label id="eyebrow" translation="[72,145]" width="560" height="24" text="SUA PRÓXIMA SESSÃO COMEÇA AQUI" color="0xFF5B66FF" font="font:SmallBoldSystemFont" />
+    <Label id="heroTitle" translation="[70,180]" width="650" height="76" text="A PRÓXIMA GRANDE HISTÓRIA" color="0xFFFFFFFF" font="font:LargeBoldSystemFont" />
+    <Label id="heroDescription" translation="[74,264]" width="620" height="64" text="Um novo jeito de explorar o entretenimento na sua TV. Escolha um título e prepare a sala." color="0xD0D1D8FF" font="font:MediumSystemFont" wrap="true" />
+    <Rectangle id="exploreButton" translation="[72,350]" width="190" height="42" color="0xE50914FF" />
+    <Label id="exploreLabel" translation="[88,358]" width="160" height="28" text="OK  〉  EXPLORAR" color="0xFFFFFFFF" font="font:MediumBoldSystemFont" />
+    <Label id="artLabel" translation="[810,352]" width="390" height="30" text="UMA EXPERIÊNCIA FEITA PARA SUA SALA" color="0xFFFFFFFF" font="font:SmallBoldSystemFont" horizAlign="center" />
+    <Label id="sectionKicker" translation="[64,438]" width="500" height="22" text="EM DESTAQUE" color="0xF04450FF" font="font:SmallBoldSystemFont" />
+    <Label id="sectionTitle" translation="[64,460]" width="650" height="32" text="ESCOLHAS PARA SUA PRÓXIMA SESSÃO" color="0xF4F4F5FF" font="font:MediumBoldSystemFont" />
+    <Label id="rowHint" translation="[900,464]" width="320" height="26" text="USE 〈 〉 NO CONTROLE PARA NAVEGAR" color="0x8E909BFF" font="font:SmallSystemFont" horizAlign="right" />
+    <Group id="posterRow" translation="[64,505]" />
+    <Label id="footer" translation="[64,686]" width="800" height="20" text="PHILCO CINEMA  •  INTERFACE EM DESENVOLVIMENTO" color="0x696C78FF" font="font:SmallSystemFont" />
+    <Label id="focusHint" translation="[1000,686]" width="220" height="20" text="01 / 05" color="0xB7B8C1FF" font="font:SmallBoldSystemFont" horizAlign="right" />
   </children>
 </component>
