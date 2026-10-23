@@ -2,12 +2,14 @@ sub init()
     m.posterRow = m.top.findNode("posterRow")
     m.focusHint = m.top.findNode("focusHint")
     m.sectionTitle = m.top.findNode("sectionTitle")
-    m.sectionKicker = m.top.findNode("sectionKicker")
+    m.heroTitle = m.top.findNode("heroTitle")
+    m.heroDescription = m.top.findNode("heroDescription")
+    m.exploreLabel = m.top.findNode("exploreLabel")
     m.posters = []
     m.selectedIndex = 0
 
     titles = ["NOITE ELETRICA", "ULTIMO HORIZONTE", "CODIGO VERMELHO", "MUNDO SELVAGEM", "ORBITA"]
-    tags = ["AÇÃO  •  DESTAQUE", "AVENTURA", "SUSPENSE", "NATUREZA", "FICÇÃO"]
+    tags = ["ACAO", "AVENTURA", "SUSPENSE", "NATUREZA", "FICCAO"]
     numbers = ["01", "02", "03", "04", "05"]
     colors = ["0x35101DFF", "0x14283FFF", "0x42131AFF", "0x12342EFF", "0x211B46FF"]
     accentColors = ["0xF04450FF", "0x47A7E8FF", "0xF04450FF", "0x3CC7A0FF", "0x9A83FFFF"]
@@ -15,23 +17,23 @@ sub init()
     for i = 0 to titles.count() - 1
         card = createObject("roSGNode", "Group")
         card.id = "card" + i.toStr()
-        card.translation = [i * 226, 0]
+        card.translation = [i * 234, 0]
 
         panel = createObject("roSGNode", "Rectangle")
-        panel.width = 208
-        panel.height = 132
+        panel.width = 218
+        panel.height = 142
         panel.color = colors[i]
         panel.opacity = 1.0
         card.appendChild(panel)
 
         topLine = createObject("roSGNode", "Rectangle")
-        topLine.width = 208
+        topLine.width = 218
         topLine.height = 4
         topLine.color = accentColors[i]
         card.appendChild(topLine)
 
         number = createObject("roSGNode", "Label")
-        number.translation = [14, 14]
+        number.translation = [16, 14]
         number.width = 52
         number.height = 24
         number.text = numbers[i]
@@ -40,8 +42,8 @@ sub init()
         card.appendChild(number)
 
         label = createObject("roSGNode", "Label")
-        label.translation = [14, 45]
-        label.width = 180
+        label.translation = [16, 48]
+        label.width = 188
         label.height = 48
         label.text = titles[i]
         label.color = "0xFFFFFFFF"
@@ -50,12 +52,12 @@ sub init()
         card.appendChild(label)
 
         tag = createObject("roSGNode", "Label")
-        tag.translation = [14, 105]
-        tag.width = 182
-        tag.height = 20
+        tag.translation = [16, 116]
+        tag.width = 184
+        tag.height = 18
         tag.text = tags[i]
         tag.color = "0xD0D1D8FF"
-        tag.font = "font:SmallSystemFont"
+        tag.font = "font:SmallBoldSystemFont"
         card.appendChild(tag)
 
         m.posterRow.appendChild(card)
@@ -70,12 +72,15 @@ sub updateSelection()
     for i = 0 to m.posters.count() - 1
         card = m.posters[i]
         panel = card.getChild(0)
+        topLine = card.getChild(1)
         if i = m.selectedIndex
             card.scale = [1.04, 1.04]
             panel.opacity = 1.0
+            topLine.opacity = 1.0
         else
             card.scale = [1.0, 1.0]
-            panel.opacity = 0.62
+            panel.opacity = 0.52
+            topLine.opacity = 0.55
         end if
     end for
 
@@ -83,6 +88,16 @@ sub updateSelection()
         itemNumber = "0" + (m.selectedIndex + 1).toStr()
         m.focusHint.text = itemNumber + " / " + m.posters.count().toStr()
     end if
+end sub
+
+sub showSelectedTitle()
+    selected = m.posters[m.selectedIndex]
+    titleLabel = selected.getChild(3)
+    tagLabel = selected.getChild(4)
+    if m.heroTitle <> invalid then m.heroTitle.text = titleLabel.text
+    if m.heroDescription <> invalid then m.heroDescription.text = "Categoria: " + tagLabel.text + ". Titulo demonstrativo da interface."
+    if m.sectionTitle <> invalid then m.sectionTitle.text = "SELECIONADO: " + titleLabel.text
+    if m.exploreLabel <> invalid then m.exploreLabel.text = "OK  •  SELECIONADO"
 end sub
 
 function onKeyEvent(key as String, press as Boolean) as Boolean
@@ -101,20 +116,13 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
         end if
         return true
     else if key = "OK"
-        if m.sectionTitle <> invalid
-            m.sectionTitle.text = m.posters[m.selectedIndex].getChild(3).text
-        end if
-        if m.sectionKicker <> invalid
-            m.sectionKicker.text = "SELEÇÃO ATUAL"
-        end if
+        showSelectedTitle()
         return true
     else if key = "back"
-        if m.sectionTitle <> invalid
-            m.sectionTitle.text = "ESCOLHAS PARA SUA PRÓXIMA SESSÃO"
-        end if
-        if m.sectionKicker <> invalid
-            m.sectionKicker.text = "EM DESTAQUE"
-        end if
+        if m.heroTitle <> invalid then m.heroTitle.text = "O QUE VAMOS VER HOJE?"
+        if m.heroDescription <> invalid then m.heroDescription.text = "Explore a seleção e escolha um título."
+        if m.sectionTitle <> invalid then m.sectionTitle.text = "EM DESTAQUE"
+        if m.exploreLabel <> invalid then m.exploreLabel.text = "OK  •  SELECIONAR"
         return true
     end if
     return false
