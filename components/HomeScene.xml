@@ -6,9 +6,8 @@
     <Rectangle id="ambientGlow" translation="[690,0]" width="590" height="440" color="0x24101AFF" opacity="0.58" />
     <Rectangle id="headerLine" translation="[48,78]" width="1184" height="1" color="0x292B35FF" />
     <Label id="brand" translation="[0,24]" width="1280" height="46" text="TV" color="0xFFFFFFFF" font="font:LargeBoldSystemFont" horizAlign="center" />
-    <Label id="headerHint" translation="[48,38]" width="300" height="22" text="HOME" color="0x777B89FF" font="font:SmallBoldSystemFont" />
-    <Label id="headerRight" translation="[980,38]" width="252" height="22" text="SEU ENTRETENIMENTO" color="0x777B89FF" font="font:SmallBoldSystemFont" horizAlign="right" />
-
+    <Label id="headerHint" translation="[48,38]" width="300" height="22" text="CENTRAL DE APPS · TESTE" color="0x777B89FF" font="font:SmallBoldSystemFont" />
+    <Label id="headerRight" translation="[980,38]" width="252" height="22" text="EXPERIMENTO ISOLADO" color="0x777B89FF" font="font:SmallBoldSystemFont" horizAlign="right" />
     <Rectangle id="heroPanel" translation="[48,104]" width="1184" height="326" color="0x11141DFF" />
     <Rectangle id="heroAccent" translation="[48,104]" width="5" height="326" color="0xE50914FF" />
     <Rectangle id="artPanel" translation="[748,104]" width="484" height="326" color="0x1B1019FF" />
@@ -17,18 +16,17 @@
     <Rectangle id="artShape3" translation="[1010,184]" width="148" height="201" color="0xD91D31FF" opacity="0.72" />
     <Rectangle id="artShape4" translation="[1094,220]" width="86" height="165" color="0xF04450FF" opacity="0.62" />
     <Rectangle id="artBase" translation="[748,386]" width="484" height="44" color="0x090A0FFF" opacity="0.76" />
-    <Label id="eyebrow" translation="[82,144]" width="580" height="24" text="ESCOLHA SUA PRÓXIMA SESSÃO" color="0xF04450FF" font="font:SmallBoldSystemFont" />
-    <Label id="heroTitle" translation="[80,181]" width="620" height="82" text="O QUE VAMOS VER HOJE?" color="0xFFFFFFFF" font="font:LargeBoldSystemFont" wrap="true" />
-    <Label id="heroDescription" translation="[84,270]" width="590" height="54" text="Explore a seleção e escolha um título." color="0xC7C9D2FF" font="font:MediumSystemFont" wrap="true" />
-    <Rectangle id="exploreButton" translation="[82,348]" width="206" height="48" color="0xE50914FF" />
-    <Label id="exploreLabel" translation="[98,359]" width="178" height="28" text="OK  •  SELECIONAR" color="0xFFFFFFFF" font="font:MediumBoldSystemFont" />
-    <Label id="artLabel" translation="[778,397]" width="424" height="22" text="SELEÇÃO EM DESTAQUE" color="0xFFFFFFFF" font="font:SmallBoldSystemFont" horizAlign="center" />
-
-    <Label id="sectionTitle" translation="[52,454]" width="680" height="32" text="EM DESTAQUE" color="0xF4F4F6FF" font="font:MediumBoldSystemFont" />
-    <Label id="rowHint" translation="[780,458]" width="448" height="24" text="◀  ▶  NAVEGAR     OK  SELECIONAR" color="0x8E929FFF" font="font:SmallBoldSystemFont" horizAlign="right" />
+    <Label id="eyebrow" translation="[82,144]" width="580" height="24" text="APLICATIVOS ENCONTRADOS NA TV" color="0xF04450FF" font="font:SmallBoldSystemFont" />
+    <Label id="heroTitle" translation="[80,181]" width="620" height="82" text="CENTRAL DE APLICATIVOS" color="0xFFFFFFFF" font="font:LargeBoldSystemFont" wrap="true" />
+    <Label id="heroDescription" translation="[84,270]" width="590" height="54" text="Testando se o Roku OS permite consultar e abrir canais por dentro do nosso app." color="0xC7C9D2FF" font="font:MediumSystemFont" wrap="true" />
+    <Rectangle id="exploreButton" translation="[82,348]" width="260" height="48" color="0xE50914FF" />
+    <Label id="exploreLabel" translation="[98,359]" width="242" height="28" text="OK  ·  ABRIR APLICATIVO" color="0xFFFFFFFF" font="font:MediumBoldSystemFont" />
+    <Label id="artLabel" translation="[778,397]" width="424" height="22" text="TESTE DE COMPATIBILIDADE" color="0xFFFFFFFF" font="font:SmallBoldSystemFont" horizAlign="center" />
+    <Label id="sectionTitle" translation="[52,454]" width="680" height="32" text="APLICATIVOS INSTALADOS" color="0xF4F4F6FF" font="font:MediumBoldSystemFont" />
+    <Label id="rowHint" translation="[780,458]" width="448" height="24" text="◀  ▶  NAVEGAR     OK  ABRIR" color="0x8E929FFF" font="font:SmallBoldSystemFont" horizAlign="right" />
     <Group id="posterRow" translation="[52,500]" />
     <Rectangle id="footerLine" translation="[48,674]" width="1184" height="1" color="0x292B35FF" />
-    <Label id="footer" translation="[52,686]" width="600" height="20" text="" color="0x696C78FF" font="font:SmallSystemFont" />
-    <Label id="focusHint" translation="[1020,686]" width="208" height="20" text="01 / 05" color="0xB7B8C1FF" font="font:SmallBoldSystemFont" horizAlign="right" />
+    <Label id="footer" translation="[52,686]" width="800" height="20" text="Versão experimental · não altera a tela inicial do Roku" color="0x696C78FF" font="font:SmallSystemFont" />
+    <Label id="focusHint" translation="[1020,686]" width="208" height="20" text="0 / 0" color="0xB7B8C1FF" font="font:SmallBoldSystemFont" horizAlign="right" />
   </children>
 </component>
