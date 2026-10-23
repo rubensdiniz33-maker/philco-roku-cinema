@@ -11,6 +11,7 @@ sub init()
     m.visibleCount = 5
     m.cardWidth = 234
     m.rowX = 52
+    m.loadError = ""
 
     loadInstalledApps()
     buildCards()
@@ -26,7 +27,7 @@ sub loadInstalledApps()
     if addresses <> invalid
         for each key in addresses
             value = addresses[key]
-            if value <> invalid and value <> "" and value <> "0.0.0.0"
+            if value <> invalid and value <> "" and value <> "0.0.0.0" and Instr(1, value, ".") > 0 and Instr(1, value, ":") = 0
                 ipAddress = value
                 exit for
             end if
@@ -34,7 +35,7 @@ sub loadInstalledApps()
     end if
 
     if ipAddress = ""
-        m.loadError = "Nao foi possivel identificar o IP da TV."
+        m.loadError = "Nao foi possivel identificar o IP IPv4 da TV."
         return
     end if
 
@@ -138,7 +139,7 @@ sub buildCards()
         tag.translation = [16, 116]
         tag.width = 184
         tag.height = 18
-        tag.text = "APLICATIVO INSTALADO"
+        tag.text = "CANAL INSTALADO"
         tag.color = "0xD0D1D8FF"
         tag.font = "font:SmallBoldSystemFont"
         card.AppendChild(tag)
@@ -197,7 +198,7 @@ sub launchSelectedApp()
     if addresses <> invalid
         for each key in addresses
             value = addresses[key]
-            if value <> invalid and value <> "" and value <> "0.0.0.0"
+            if value <> invalid and value <> "" and value <> "0.0.0.0" and Instr(1, value, ".") > 0 and Instr(1, value, ":") = 0
                 ipAddress = value
                 exit for
             end if
@@ -205,7 +206,7 @@ sub launchSelectedApp()
     end if
 
     if ipAddress = ""
-        m.heroDescription.text = "Nao foi possivel identificar o IP da TV para abrir o aplicativo."
+        m.heroDescription.text = "Nao foi possivel identificar o IP IPv4 da TV."
         return
     end if
 
